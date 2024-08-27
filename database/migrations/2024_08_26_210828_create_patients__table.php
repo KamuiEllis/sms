@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('lastname');
             $table->integer('age');
             $table->string('records');
-            $table->foreignId('caretaker');
+            $table->string('caretaker');
             $table->timestamps();
         });
     }

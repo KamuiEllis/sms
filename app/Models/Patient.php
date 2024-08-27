@@ -13,8 +13,10 @@ class Patient extends Model
         'firstname',
         'lastname',
         'age',
-        'records'
-        'password',
+        'records',
+        'caretaker'
     ];
 
+
+    
 }

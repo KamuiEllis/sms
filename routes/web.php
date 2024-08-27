@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\WorkerController;
+use App\Http\Controllers\PatientController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -34,6 +35,13 @@ Route::middleware('auth')->group(function () {
     Route::get('/getWorker/{worker}', [WorkerController::class, 'show'])->name('worker.show');
     Route::put('/editWorker/{worker}', [WorkerController::class, 'edit'])->name('worker.edit');
     Route::get('/deleteWorker/{worker}', [WorkerController::class, 'destroy']);
+
+    Route::get('/patients', [PatientController::class, 'index'])->name('patients.index');
+    Route::get('/getPatient/{patient}', [PatientController::class, 'show'])->name('patient.show');
+    Route::get('/createPatientView', [PatientController::class, 'create'])->name('patient.create');
+    Route::post('/storePatientView', [PatientController::class, 'store'])->name('patient.store');
+    Route::put('/editPatient/{patient}', [PatientController::class, 'edit'])->name('patient.edit');
+    Route::get('/deletePatient/{patient}', [PatientController::class, 'destroy']);
 });
 
 require __DIR__.'/auth.php';
